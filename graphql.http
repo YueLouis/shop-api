@@ -1,0 +1,31 @@
+### Lấy danh sách category
+POST http://localhost:8080/graphql
+Content-Type: application/json
+
+{
+  "query": "{ categories { id name } }"
+}
+
+### Lấy sản phẩm theo categoryId = 1
+POST http://localhost:8080/graphql
+Content-Type: application/json
+
+{
+  "query": "{ productsByCategory(categoryId: 1) { id name quantitySold category { id name } } }"
+}
+
+### Lấy top products
+POST http://localhost:8080/graphql
+Content-Type: application/json
+
+{
+  "query": "{ topSoldProducts { id name quantitySold category { id name } } }"
+}
+
+### Lấy sản phẩm mới nhất
+POST http://localhost:8080/graphql
+Content-Type: application/json
+
+{
+  "query": "{ newProducts { id name quantitySold createdAt category { id name } } }"
+}
